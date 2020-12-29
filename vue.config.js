@@ -1,16 +1,22 @@
-const path = require('path')
+const path = require("path");
 
-function resolve (dir) {
-  return path.join(__dirname, dir)
+function resolve(dir) {
+  return path.join(__dirname, dir);
 }
 
 module.exports = {
-  publicPath: '/cli3',
-  outputDir: 'dist/cli3',
-  chainWebpack: (config) => {
-    config.resolve.alias.set('@', resolve('src'))
+  publicPath: "/cli3",
+  outputDir: "dist/cli3",
+  chainWebpack: config => {
+    config.resolve.alias.set("@", resolve("src"));
+  },
+  productionSourceMap: false,
+  configureWebpack: config => {
+    //调试JS
+    config.devtool = process.env.NODE_ENV === "production" ? "none" : "eval-source-map";
   },
   devServer: {
+    open: true,
     proxy: {
       "^/login": {
         target: "https://crm.huodong.hetaobiancheng.com",
@@ -21,10 +27,10 @@ module.exports = {
           "^/login": "/"
         }
       },
-      '^/staff': {
+      "^/staff": {
         target: `https://crm.huodong.hetaobiancheng.com/`,
         changeOrigin: true
       }
     }
   }
-}
+};
