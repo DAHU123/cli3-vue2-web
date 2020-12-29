@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <button @click="handleClick">点击</button>
   </div>
 </template>
 
@@ -9,6 +10,18 @@ export default {
   name: "HelloWorld",
   props: {
     msg: String
+  },
+  methods: {
+    handleClick() {
+      const params = {
+        username: "xupengpeng",
+        password: "7k5458"
+      };
+      // 进行接口请求
+      this.$api.postAccountLogin({ params }).then(res => {
+        console.log(res);
+      });
+    }
   }
 };
 </script>
