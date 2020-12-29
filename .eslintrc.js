@@ -62,6 +62,7 @@ module.exports = {
     "vue/html-closing-bracket-newline":[0],
     "vue/no-v-html": [0],
     'generator-star-spacing': 'off',
+    'semi': ["error", "always"],
     "object-curly-spacing": [
       'error',
       'always',

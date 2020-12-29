@@ -13,7 +13,8 @@ module.exports = {
   productionSourceMap: false,
   configureWebpack: config => {
     //调试JS
-    config.devtool = process.env.NODE_ENV === "production" ? "none" : "eval-source-map";
+    config.devtool =
+      process.env.NODE_ENV === "production" ? "none" : "eval-source-map";
   },
   devServer: {
     open: true,
