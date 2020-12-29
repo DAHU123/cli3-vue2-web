@@ -7,15 +7,19 @@ function resolve(dir) {
 module.exports = {
   publicPath: "/cli3",
   outputDir: "dist/cli3",
+
   chainWebpack: config => {
     config.resolve.alias.set("@", resolve("src"));
   },
+
   productionSourceMap: false,
+
   configureWebpack: config => {
     //调试JS
     config.devtool =
       process.env.NODE_ENV === "production" ? "none" : "eval-source-map";
   },
+
   devServer: {
     open: true,
     proxy: {
@@ -32,6 +36,15 @@ module.exports = {
         target: `https://crm.huodong.hetaobiancheng.com/`,
         changeOrigin: true
       }
+    }
+  },
+
+  pluginOptions: {
+    'style-resources-loader': {
+      preProcessor: 'scss',
+      patterns: [
+        path.resolve(__dirname, './src/styles/utilCss.scss')
+      ]
     }
   }
 };
