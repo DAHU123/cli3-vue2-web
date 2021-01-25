@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <button @click="handleClick">点击</button>
+    <el-button type="primary" @click="handleClick">点击</el-button>
   </div>
 </template>
 
