@@ -9,7 +9,9 @@
     <div class="parent">
       <div class="child"></div>
     </div>
-    <img src="@/assets/logo.png" style="width: 480px!important;" />
+    <div class="ellipsis">
+      时代峰峻了沙拉酱弗兰克临时冻结恢复了乐山大佛了老师讲地方啦，三六九等分类
+    </div>
   </div>
 </template>
 
@@ -21,8 +23,8 @@ export default {
 
 <style scoped lang="scss">
 .parent {
-  width: 500px;
-  height: 500px;
+  width: 300px;
+  height: 300px;
   background: pink;
   visibility: hidden;
   .child {
@@ -55,15 +57,40 @@ li {
 li:last-child::after {
   content: none;
 }
-img {
-  /*方式一*/
-  /*box-sizing: border-box;*/
-  /*padding: 0 90px;*/
+/*用css实现文本超出显示省略号----单行*/
+/*.ellipsis {*/
+/*  width: 100px;*/
+/*  overflow: hidden;*/
+/*  text-overflow: ellipsis;*/
+/*  white-space: nowrap;*/
+/*}*/
 
-  /*方式二*/
-  /*max-width: 300px;*/
+/*用css实现文本超出显示省略号----多行，不考虑兼容*/
+/*.ellipsis {*/
+/*  width: 100px;*/
+/*  overflow: hidden;*/
+/*  display: -webkit-box;*/
+/*  -webkit-box-orient: vertical;*/
+/*  -webkit-line-clamp: 3;*/
+/*}*/
 
-  /*方式三*/
-  transform: scale(0.625);
+/*用css实现文本超出显示省略号----多行，考虑兼容*/
+.ellipsis {
+  width: 100px;
+  position: relative;
+  line-height: 20px;
+  max-height: 40px;
+  overflow: hidden;
+}
+.ellipsis::after {
+  content: "...";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-left: 40px;
+  background: -webkit-linear-gradient(left, transparent, #fff 55%);
+  background: -o-linear-gradient(right, transparent, #fff 55%);
+  background: -moz-linear-gradient(right, transparent, #fff 55%);
+  background: linear-gradient(to right, transparent, #fff 55%);
 }
 </style>
