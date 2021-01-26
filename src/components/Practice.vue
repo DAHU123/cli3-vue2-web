@@ -12,12 +12,49 @@
     <div class="ellipsis">
       时代峰峻了沙拉酱弗兰克临时冻结恢复了乐山大佛了老师讲地方啦，三六九等分类
     </div>
+    <hr />
+    <v-clamp
+      :class="{
+        demo: true
+      }"
+      :max-lines="3"
+      autoresize
+      :style="{
+        width: `${100}px`
+      }"
+    >
+      {{
+        zh
+          ? "textZh"
+          : "时代峰峻了沙拉酱弗兰克临时冻结恢复了乐山大佛了老师讲地方啦，三六九等分类"
+      }}
+      <button
+        slot="after"
+        slot-scope="{ toggle }"
+        class="toggle btn btn-sm"
+        @click="toggle"
+      >
+        {{ zh ? "切换" : "Toggle" }}
+      </button>
+    </v-clamp>
   </div>
 </template>
 
 <script>
+import VClamp from "@/components/VClamp.js";
 export default {
-  name: "Practice"
+  name: "Practice",
+  components: { VClamp },
+  data() {
+    return {
+      zh: false
+    };
+  },
+  methods: {
+    toggle() {
+      this.zh = !this.zh;
+    }
+  }
 };
 </script>
 
