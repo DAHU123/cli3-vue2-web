@@ -1,6 +1,7 @@
 <template>
   <div>
     Practice
+    <el-button type="primary" @click="handleClick">点我呀</el-button>
     <ul>
       <li>面包屑一级导航</li>
       <li>二级导航</li>
@@ -53,7 +54,37 @@ export default {
   methods: {
     toggle() {
       this.zh = !this.zh;
+    },
+    handleClick() {
+      console.log(arguments);
+      console.log(typeof hahah);
     }
+  },
+  mounted() {
+    // 数组扁平化
+    let arr = [
+      [1, 2, 50],
+      [3, 9, 5, 5],
+      [6, 7, 8, 9, [11, 12, [12, 13, [14]]]],
+      10
+    ];
+    // 数组扁平化
+    let _flat = function(array) {
+      return array.flat(Infinity);
+    };
+    // 数组去重
+    let uniq = function(array) {
+      return Array.from(new Set([...array]));
+    };
+    // 数组升序排序
+    let sortDis = function(array) {
+      return array.sort((a, b) => a - b);
+    };
+    let compose = (...fns) => initArr => {
+      return fns.reduceRight((y, fn) => fn(y), initArr);
+    };
+    const nwFn = compose(sortDis, uniq, _flat);
+    console.log(nwFn(arr));
   }
 };
 </script>
