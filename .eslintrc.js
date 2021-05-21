@@ -8,7 +8,7 @@ module.exports = {
     parser: "babel-eslint"
   },
   rules: {
-    indent: ["error", 2],
+    indent: ["warn", 2],
     "dot-location": [2, "property"],
     "comma-spacing": [1],
     "space-before-blocks": [2, "always"], // 强制在块之前使用一致的空格
@@ -47,9 +47,9 @@ module.exports = {
     "vue/html-closing-bracket-newline": [0],
     "vue/no-v-html": [0],
     "generator-star-spacing": "off",
-    semi: ["error", "always"],
+    semi: ["warn", "always"],
     "object-curly-spacing": [
-      "error",
+      "warn",
       "always",
       {
         arraysInObjects: true,
