@@ -8,39 +8,27 @@ module.exports = {
     parser: "babel-eslint"
   },
   rules: {
-    "indent": ["error", 2],
-    "dot-location": [
-      2,
-      "property"
-    ],
+    indent: ["error", 2],
+    "dot-location": [2, "property"],
     "comma-spacing": [1],
-    "space-before-blocks": [
-      2,
-      "always"
-    ], // 强制在块之前使用一致的空格
+    "space-before-blocks": [2, "always"], // 强制在块之前使用一致的空格
     "space-unary-ops": [
       2,
       {
-        "words": true,
-        "nonwords": false
+        words: true,
+        nonwords: false
       }
     ], // 强制在一元操作符前后使用一致的空格
-    "array-bracket-spacing": [
-      2,
-      "never"
-    ], // 强制数组方括号中使用一致的空格
-    "quotes": [
-      0,
-      "double"
-    ], // 强制使用一致的反勾号、双引号或单引号
+    "array-bracket-spacing": [2, "never"], // 强制数组方括号中使用一致的空格
+    quotes: [0, "double"], // 强制使用一致的反勾号、双引号或单引号
     "arrow-spacing": [
       2,
       {
-        "before": true,
-        "after": true
+        before: true,
+        after: true
       }
     ],
-    "vue/max-attributes-per-line":0,
+    "vue/max-attributes-per-line": 0,
     "no-var": 2, //禁用var，用let和const代替
     "no-mixed-spaces-and-tabs": 2, // 禁止空格和 tab 的混合缩进
     "no-trailing-spaces": 1, // 禁用行尾空格
@@ -48,24 +36,21 @@ module.exports = {
     "no-unused-vars": [
       2,
       {
-        "vars": "all",
-        "args": "none"
+        vars: "all",
+        args: "none"
       }
     ], // 禁止出现未使用过的变量
-    "vue/html-indent": [
-      0,
-      "tab"
-    ],
+    "vue/html-indent": [0, "tab"],
     "vue/html-self-closing": [0],
     "vue/multiline-html-element-content-newline": [0],
-    "vue/singleline-html-element-content-newline":[0],
-    "vue/html-closing-bracket-newline":[0],
+    "vue/singleline-html-element-content-newline": [0],
+    "vue/html-closing-bracket-newline": [0],
     "vue/no-v-html": [0],
-    'generator-star-spacing': 'off',
-    'semi': ["error", "always"],
+    "generator-star-spacing": "off",
+    semi: ["error", "always"],
     "object-curly-spacing": [
-      'error',
-      'always',
+      "error",
+      "always",
       {
         arraysInObjects: true,
         objectsInObjects: false

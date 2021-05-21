@@ -3,7 +3,8 @@
     <div id="nav">
       <router-link to="/">Practice</router-link> |
       <router-link to="/home">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/composition">Composition</router-link>
     </div>
     <router-view />
   </div>
@@ -14,7 +15,7 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $--color-primary;
+  color: $--color-text-regular;
 }
 
 #nav {

@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-<!--    <img alt="Vue logo" src="../assets/logo.png" />-->
+    <!--    <img alt="Vue logo" src="../assets/logo.png" />-->
     <el-button type="primary">点击</el-button>
     <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
