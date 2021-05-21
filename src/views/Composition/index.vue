@@ -5,13 +5,16 @@
     <div>init: {{ init }}</div>
     <el-button type="primary" @click="addCount">增加count</el-button>
     <el-button type="primary" @click="minusCount">减少count</el-button>
+    <Others />
   </div>
 </template>
 
 <script>
+import Others from "./Others";
 import { reactive, toRefs, watch, watchEffect } from "@vue/composition-api";
 export default {
   name: "Composition",
+  components: { Others },
   setup(props, context) {
     let count = reactive({
       num: 0
